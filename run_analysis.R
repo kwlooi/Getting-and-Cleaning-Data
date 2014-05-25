@@ -1,4 +1,4 @@
-# Assmuing that this R script resides in the directory where there is a subdirectory "./UCI HAR Dataset"
+# Assuming that this R script resides in the directory where there is a subdirectory "./UCI HAR Dataset"
 # which contains all the required data.  First read the test data set and merge the various files.
 # Then, perform the same read of the train data set and merge the various files.  The last step is to
 # merge the test and train data sets.
@@ -376,9 +376,6 @@ names(trainSubjectData) <- "SubjectID"
 head(trainSubjectData, 100)
 
 # Join all the three train data sets together - SubjectID, ActivityID/Name, Features Vector
-trainSubjectActivityData <- cbind(trainSubjectData, trainLabelData, trainData)
-dim(trainSubjectActivityData)
-
 trainSubjectBodyAccData <- cbind(trainBodyAccXMean, trainBodyAccXSTD, trainBodyAccYMean, trainBodyAccYSTD, trainBodyAccZMean, trainBodyAccZSTD)
 trainSubjectGyroData <- cbind(trainGyroXMean, trainGyroXSTD, trainGyroYMean, trainGyroYSTD, trainGyroZMean, trainGyroZSTD)
 trainSubjectTotalAccData <- cbind(trainTotalAccXMean, trainTotalAccXSTD, trainTotalAccYMean, trainTotalAccYSTD, trainTotalAccZMean, trainTotalAccZSTD)
@@ -408,6 +405,6 @@ sorted_meanSummary_allSubjectActivityData <- meanSummary_allSubjectActivityData[
 
 
 # Write the results to a file
-con <- file("./tidy.csv","w")
-write.csv(sorted_meanSummary_allSubjectActivityData, file = con, quote = FALSE, row.names = FALSE)
+con <- file("./tidy.txt","w")
+write.csv(sorted_meanSummary_allSubjectActivityData, file = con, quote = TRUE, row.names = FALSE)
 close(con)
