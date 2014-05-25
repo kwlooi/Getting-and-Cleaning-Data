@@ -11,11 +11,10 @@ Read the activity_labels.txt metadata file.  This file has the six unique activi
 Read the features.txt metadata file.  This file has the 561 unique feature IDs and labels.
 * featureLabels - stores the list of activity labels by FeatureID
 
-----------------------------------------------------------------------------------------
 Start reading in the test an train data sets.  Need to join the data sets with the metadata
 files read from the base directory above.
 Also need to process and compute the mean and std. dev. of the data. 
-----------------------------------------------------------------------------------------
+
 
 
 Read the test data set.  It has 561 delimited columns for each of the measured features.
@@ -23,9 +22,7 @@ Use the feature names from above metadata to relabel the columns accordingly.
 
 * testData - stores the raw data set for test subjects
 
-----------------------------------------------------------------------------------------
 The use of Inertial Signals is optional.  Getting the mean and std. dev. for each measurement.
-----------------------------------------------------------------------------------------
 
 * testBodyAccXData - stores the raw data set for X-axis body acceleration
 * testBodyAccXMean - stores the mean of X-axis body acceleration
@@ -42,9 +39,7 @@ The use of Inertial Signals is optional.  Getting the mean and std. dev. for eac
 * testTotalAccXSTD - stores the std. dev. of X-axis total acceleration
 (Repeat process for Y and Z axis)
 
-----------------------------------------------------------------------------------------
 End of optional data collection
-----------------------------------------------------------------------------------------
 
 Read the test activity IDs.  Each row identifies the Activity ID for each vector from the
 previous feature measurement file.
@@ -63,18 +58,14 @@ Join all the three test data sets together - SubjectID, ActivityID/Name, Feature
 * testSubjectActivityData - stores all the measurements for the test subjects
 
 
-----------------------------------------------------------------------------------------
 Repeat the same read data process for the train subjects
-----------------------------------------------------------------------------------------
 
 Read the train data set.  It has 561 delimited columns for each of the measured features.
 Use the feature names from above metadata to relabel the columns accordingly.
 
 * trainData - stores the raw data set for train subjects
 
-----------------------------------------------------------------------------------------
 The use of Inertial Signals is optional.  Getting the mean and std. dev. for each measurement.
-----------------------------------------------------------------------------------------
 
 * trainBodyAccXData - stores the raw data set for X-axis body acceleration
 * trainBodyAccXMean - stores the mean of X-axis body acceleration
@@ -91,9 +82,7 @@ The use of Inertial Signals is optional.  Getting the mean and std. dev. for eac
 * trainTotalAccXSTD - stores the std. dev. of X-axis total acceleration
 (Repeat process for Y and Z axis)
 
-----------------------------------------------------------------------------------------
 End of optional data collection
-----------------------------------------------------------------------------------------
 
 Read the train activity IDs.  Each row identifies the Activity ID for each vector from the
 previous feature measurement file.
@@ -112,9 +101,8 @@ Join all the three train data sets together - SubjectID, ActivityID/Name, Featur
 * trainSubjectActivityData - stores all the measurements for the train subjects
 
 
-----------------------------------------------------------------------------------------
 Join test and train data sets
-----------------------------------------------------------------------------------------
+
 * allSubjectActivityData - stores all the test and train data combined
 * summary_allSubjectActivityData - summary of all the test and train data combined 
 
